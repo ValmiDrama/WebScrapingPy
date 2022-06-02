@@ -82,3 +82,5 @@ Quais as 10 operadoras que mais tiveram despesas com "EVENTOS/ SINISTROS CONHECI
      Criar uma UI para coleta das variaveis:
      Verificar se get_data_notas e diferente de vazio:
      Adicionar verificação da criaçao do Rar
+     Passar lista via parametro
+     Quebrar aplicar SOLID
