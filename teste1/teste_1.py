@@ -1,3 +1,9 @@
+# Tarefas do código:
+
+# Acessar o site e Baixar 
+# Anexos I ao Anexo IV
+# Agrupar os anexos em um mesmo arquivo compactado
+
 import os
 
 from zipfile import ZipFile
