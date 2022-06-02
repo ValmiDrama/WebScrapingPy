@@ -1,0 +1,41 @@
+A criterio de conhecimento, referente a Teste3.
+
+Como desmonstração de meu interesse nesta oportunidade,
+segue os codigos fruto dos estudos dedicado a esta vaga.
+
+
+linguagem SQL em um banco PostgreSQL
+
+Criar queries para criar tabelas com as colunas necessárias para o arquivo csv.
+ 
+para cada tabela trimestral podemos criar no Postgres: (trimes2021_1, trimes2021_2, trimes2021_3)
+
+CREATE TABLE trimes2021_1(
+id serial primary key,
+data  DATE,
+reg_ans VARCHAR(20),
+cd_conta_contabil VARCHAR(250),
+descricao TEXT NULL,
+vl_saldo_final numeric(20,2)
+);
+
+Queries de load: criar as queries para carregar o conteúdo dos arquivos obtidos nas tarefas de preparação
+
+importa arquivos em PDF.
+
+COPY trimes2021_1(data, reg_ans, cd_conta_contabil, descricao, vl_saldo_final) 
+FROM 'C:\Users\Public\localDataPostgres\1T2021.csv' DELIMITER ';' CSV HEADER, ENCODING 'UTF8';
+
+
+Junta Inner Join as tabelas e pega os 10 com maior valor financeiro
+
+SELEC reg_ans, descricao
+FROM trimes2021_1
+	[INNER] JOIN trimes2021_2
+		ON trimes2021_1.descricao=trimes2021_2.descricao
+	[INNER] JOIN trimes2021_3
+	ON trimes2021_1.descricao=trimes2021_3.descricao
+WHERE descrição = 'EVENTOS/ SINISTROS CONHECIDOS OU AVISADOS  DE ASSISTÊNCIA A SAÚDE MEDICO HOSPITALAR'
+ORDER BY vl_saldo_final, reg_ans
+LIMIT 10;
+
