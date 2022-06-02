@@ -32,8 +32,8 @@ def convertToZip():
 # localizacao do arquivo (local/web)
 dir = os.getcwd()
 output_name = '{}\ValmiJunior'.format(dir)
-# pdf_path='https://www.gov.br/ans/pt-br/arquivos/assuntos/consumidor/o-que-seu-plano-deve-cobrir/Anexo_I_Rol_2021RN_465.2021_RN473_RN478_RN480_RN513_RN536_RN537.pdf'
-pdf_path='arquivo.pdf'
+pdf_path='https://www.gov.br/ans/pt-br/arquivos/assuntos/consumidor/o-que-seu-plano-deve-cobrir/Anexo_I_Rol_2021RN_465.2021_RN473_RN478_RN480_RN513_RN536_RN537.pdf'
+#pdf_path='arquivo.pdf'
 table_file = r"arquivo.pdf"
 output_csv = r"/file.csv"
 
